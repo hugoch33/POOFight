@@ -17,25 +17,27 @@ public:
 	int get_pv ();
 	string get_nom() const;
     int get_stamina ();
-
+    int get_def ();
 };
 
-#endif
 
 
-class Vilain {
-private:
-	string m_nom;
-	int m_pv;
-    int m_stamina;
-    int m_def;
+class Vilain : public Personnage {
 
 public:
-	Personnage(string nom, int pv, int stamina, int def) ;
-	~Personnage();
-
-	int get_pv ();
-	string get_nom() const;
-    int get_stamina ();
+	
+    Vilain();
 
 };
+
+
+class Hero : public Personnage {
+
+public:
+	
+    Hero();
+
+};
+
+
+#endif
