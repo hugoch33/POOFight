@@ -40,7 +40,8 @@ class KyllianMbaccle : public Hero
 {
 public:
 	// Gestion Attaque :
-	setstats(100, "Kyllian Mbaccle", 10, 50);
+	void KyllianMbaccle();
+
 	string attaque1_nom = "Moi on me parle pas d'age";
 	int attaque1_degats = 30;
 
@@ -50,4 +51,6 @@ public:
 	string attaque2_nom = "10 avec le joueur de Gibraltar";
 	int attaque2_degats = 50;
 }
+
+void StartGame;
 #endif

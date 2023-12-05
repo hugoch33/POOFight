@@ -6,11 +6,16 @@ void StartGame()
     void PrintHeroList();
     int choice;
     cin >> choice;
+
+    if (choice == 1)
+    {
+        plr1 = new KyllianMbaccle;
+    }
 }
 
 void PrintHeroList()
 {
-    cout << "1. Ben \n 2. Ben \n 3. Ben \n"
+    cout << "1. Kyllian Mbaccle \n 2. Ben \n 3. Ben \n"
 }
 
 bool CheckIfDead(Personnage character)
@@ -59,4 +64,17 @@ int Personnage::get_stamina()
     return m_stamina
 }
 
-void setstats : Personnage(int, string, int, int)
+void Personnage::setstats(string nom, int hp, int def, int stamina)
+{
+    m_nom = nom;
+    m_pv = hp;
+    m_def = def;
+    m_stamina = stamina;
+}
+
+// Gestion Heros
+
+void KyllianMbaccle::KyllianMbaccle()
+{
+    setstats(100, "Kyllian Mbaccle", 10, 50);
+}
