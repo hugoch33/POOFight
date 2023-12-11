@@ -13,6 +13,31 @@ void StartGame()
     }
 }
 
+void NewRound(Personnage player1, Personnage player2)
+{
+    int choiceA;
+    cin >> choiceA;
+
+    while (true)
+    {
+        if (choiceA == 1)
+        {
+            player1.Attaque1(player2);
+            break;
+        }
+        if (choiceA == 2)
+        {
+            player1.Attaque2(player2);
+            break;
+        }
+        if (choiceA == 3)
+        {
+            player1.Attaque3(player2);
+            break;
+        }
+    }
+}
+
 void PrintHeroList()
 {
     cout << "1. Kyllian Mbaccle \n 2. Ben \n 3. Ben \n"

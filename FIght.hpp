@@ -62,4 +62,8 @@ public:
 	int attaque3_degats = 50;
 };
 
+bool EndGame(Personnage player1, Personnage player2);
+void StartGame();
+void NewRound(Personnage player1, Personnage player2);
+
 #endif
