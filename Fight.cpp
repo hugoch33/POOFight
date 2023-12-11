@@ -20,7 +20,7 @@ void PrintHeroList()
 
 bool CheckIfDead(Personnage character)
 {
-    if (character.get_pv > 1)
+    if (character.get_pv > 0)
     {
         return true;
     }
