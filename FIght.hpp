@@ -10,6 +10,7 @@ private:
 	int m_pv;
 	int m_stamina;
 	int m_def;
+	string m_nom;
 
 public:
 	Personnage(int pv, int stamina, int def);
@@ -23,6 +24,7 @@ public:
 	int get_pv();
 	int get_stamina();
 	int get_def();
+	string get_nom();
 };
 
 class KyllianMbaccle : public Personnage
