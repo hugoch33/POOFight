@@ -23,20 +23,24 @@ public:
 	int get_def();
 };
 
-class Vilain : public Personnage
+class KyllianMbaccle : public Personnage
 {
 public:
-	void Vilain();
+	// Gestion Attaque :
+	KyllianMbaccle();
+	~KyllianMbaccle();
+
+	string attaque1_nom = "Moi on me parle pas d'age";
+	int attaque1_degats = 30;
+
+	string attaque2_nom = "Le Football il a changé";
+	int attaque2_degats = 40;
+
+	string attaque3_nom = "10 avec le joueur de Gibraltar";
+	int attaque3_degats = 50;
 };
 
-class Hero : public Personnage
-{
-
-public:
-	void Hero();
-};
-
-class KyllianMbaccle : public Hero
+class Luffy : public Personnage
 {
 public:
 	// Gestion Attaque :
@@ -50,22 +54,6 @@ public:
 
 	string attaque3_nom = "10 avec le joueur de Gibraltar";
 	int attaque3_degats = 50;
-}
+};
 
-class Luffy : public Hero
-{
-public:
-	// Gestion Attaque :
-	void KyllianMbaccle();
-
-	string attaque1_nom = "Moi on me parle pas d'age";
-	int attaque1_degats = 30;
-
-	string attaque2_nom = "Le Football il a changé";
-	int attaque2_degats = 40;
-
-	string attaque3_nom = "10 avec le joueur de Gibraltar";
-	int attaque3_degats = 50;
-}
-void StartGame;
 #endif
