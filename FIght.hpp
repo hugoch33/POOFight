@@ -63,5 +63,6 @@ public:
 bool EndGame(Personnage player1, Personnage player2);
 void StartGame();
 void NewRound(Personnage player1, Personnage player2);
+bool CheckIfDead(Personnage character);
 
 #endif
