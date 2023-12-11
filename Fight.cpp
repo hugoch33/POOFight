@@ -76,5 +76,5 @@ void Personnage::setstats(string nom, int hp, int def, int stamina)
 
 void KyllianMbaccle::KyllianMbaccle()
 {
-    setstats(100, "Kyllian Mbaccle", 10, 50);
+    setstats(100, "Kyllian Mbaccle", 35, 50);
 }
