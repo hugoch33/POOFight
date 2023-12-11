@@ -48,9 +48,24 @@ public:
 	string attaque2_nom = "Le Football il a changé";
 	int attaque2_degats = 40;
 
-	string attaque2_nom = "10 avec le joueur de Gibraltar";
-	int attaque2_degats = 50;
+	string attaque3_nom = "10 avec le joueur de Gibraltar";
+	int attaque3_degats = 50;
 }
 
+class Luffy : public Hero
+{
+public:
+	// Gestion Attaque :
+	void KyllianMbaccle();
+
+	string attaque1_nom = "Moi on me parle pas d'age";
+	int attaque1_degats = 30;
+
+	string attaque2_nom = "Le Football il a changé";
+	int attaque2_degats = 40;
+
+	string attaque3_nom = "10 avec le joueur de Gibraltar";
+	int attaque3_degats = 50;
+}
 void StartGame;
 #endif
