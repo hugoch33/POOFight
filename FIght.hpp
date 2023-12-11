@@ -32,9 +32,9 @@ public:
 	KyllianMbaccle();
 	~KyllianMbaccle();
 
-	Personnage::Attaque1();
-	Personnage::Attaque2();
-	Personnage::Attaque3();
+	Attaque1();
+	Attaque2();
+	Attaque3();
 
 	/* string attaque1_nom = "Moi on me parle pas d'age";
 	int attaque1_degats = 30;
@@ -65,5 +65,6 @@ public:
 bool EndGame(Personnage player1, Personnage player2);
 void StartGame();
 void NewRound(Personnage player1, Personnage player2);
+bool CheckIfDead(Personnage character);
 
 #endif
