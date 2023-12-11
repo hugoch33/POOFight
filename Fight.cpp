@@ -103,3 +103,4 @@ void KyllianMbaccle::KyllianMbaccle()
 {
     setstats(100, "Kyllian Mbaccle", 35, 50);
 }
+

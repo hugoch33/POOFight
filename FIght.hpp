@@ -34,9 +34,9 @@ public:
 	KyllianMbaccle();
 	~KyllianMbaccle();
 
-	Personnage::Attaque1();
-	Personnage::Attaque2();
-	Personnage::Attaque3();
+	Attaque1();
+	Attaque2();
+	Attaque3();
 
 	/* string attaque1_nom = "Moi on me parle pas d'age";
 	int attaque1_degats = 30;
@@ -51,17 +51,13 @@ public:
 class Luffy : public Personnage
 {
 public:
-	// Gestion Attaque :
-	void KyllianMbaccle();
-
-	string attaque1_nom = "Moi on me parle pas d'age";
-	int attaque1_degats = 30;
-
-	string attaque2_nom = "Le Football il a changé";
-	int attaque2_degats = 40;
-
-	string attaque3_nom = "10 avec le joueur de Gibraltar";
-	int attaque3_degats = 50;
+	Luffy();
+	~Luffy();
+	
+	Attaque1();
+	Attaque2();
+	Attaque3();
+	
 };
 
 bool EndGame(Personnage player1, Personnage player2);
