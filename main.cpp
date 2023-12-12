@@ -7,7 +7,8 @@ int main()
     StartGame();
     while (CheckIfDead(player1) || CheckIfDead(player2))
     {
+        NewRound(player1, player2);
     }
-    NewRound(player1, player2);
+
     EndGame(player1, player2);
 }

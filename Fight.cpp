@@ -22,17 +22,53 @@ void NewRound(Personnage player1, Personnage player2)
     {
         if (choiceA == 1)
         {
-            player1.Attaque1(player2);
+            player1.Protection1(player2);
             break;
         }
         if (choiceA == 2)
         {
-            player1.Attaque2(player2);
+            player1.Protection2(player2);
             break;
         }
         if (choiceA == 3)
         {
-            player1.Attaque3(player2);
+            player1.Protection3(player2);
+            break;
+        }
+    }
+    int choiceB;
+    cin >> choiceB;
+
+    while (true)
+    {
+        if (choiceB == 1)
+        {
+            if (player1.Protection == 1)
+            {
+                cout << "Le joueur s'est protégé de cette attaque ! \n";
+                break;
+            }
+            player2.Attaque1(player2);
+            break;
+        }
+        if (choiceB == 2)
+        {
+            if (player1.Protection == 2)
+            {
+                cout << "Le joueur s'est protégé de cette attaque ! \n";
+                break;
+            }
+            player2.Attaque2(player2);
+            break;
+        }
+        if (choiceB == 3)
+        {
+            if (player1.Protection == 3)
+            {
+                cout << "Le joueur s'est protégé de cette attaque ! \n";
+                break;
+            }
+            player2.Attaque3(player2);
             break;
         }
     }
@@ -103,4 +139,3 @@ void KyllianMbaccle::KyllianMbaccle()
 {
     setstats(100, "Kyllian Mbaccle", 35, 50);
 }
-
