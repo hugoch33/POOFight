@@ -2,9 +2,8 @@
 
 int main()
 {
-    Personnage player1;
-    Personnage player2;
-    StartGame();
+    Personnage player1 = StartGame();
+    Personnage player2 = KyllianMbaccle();
     while (CheckIfDead(player1) || CheckIfDead(player2))
     {
         NewRound(player1, player2);

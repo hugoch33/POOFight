@@ -13,14 +13,19 @@ private:
 	string m_nom;
 
 public:
-	Personnage(int pv, int stamina, int def);
+	Personnage(string nom, int pv, int stamina, int def);
 	~Personnage();
 
-	virtual void Attaque1();
-	virtual void Attaque2();
-	virtual void Attaque3();
+	int protection;
+	virtual void Attaque1(Personnage cible);
+	virtual void Attaque2(Personnage cible);
+	virtual void Attaque3(Personnage cible);
 
-	void setstats(int pv, int def, int stamina);
+	virtual void Protection1();
+	virtual void Protection2();
+	virtual void Protection3();
+
+	void setstats(int pv, string nom, int def, int stamina);
 	int get_pv();
 	int get_stamina();
 	int get_def();
@@ -34,9 +39,9 @@ public:
 	KyllianMbaccle();
 	~KyllianMbaccle();
 
-	Attaque1();
-	Attaque2();
-	Attaque3();
+	void Attaque1(Personnage cible);
+	void Attaque2(Personnage cible);
+	void Attaque3(Personnage cible);
 
 	/* string attaque1_nom = "Moi on me parle pas d'age";
 	int attaque1_degats = 30;
@@ -53,15 +58,10 @@ class Luffy : public Personnage
 public:
 	Luffy();
 	~Luffy();
-	
-	Attaque1();
-	Attaque2();
-	Attaque3();
-	
 };
 
 bool EndGame(Personnage player1, Personnage player2);
-void StartGame();
+Personnage StartGame();
 void NewRound(Personnage player1, Personnage player2);
 bool CheckIfDead(Personnage character);
 
