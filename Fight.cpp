@@ -10,30 +10,36 @@ Personnage StartGame()
     if (choice == 1)
     {
         Personnage player1 = KyllianMbaccle();
+        return player1;
     }
     Personnage player2 = KyllianMbaccle();
+    
 }
 
-void NewRound(Personnage player1, Personnage player2)
+void NewRound(Personnage* player1, Personnage* player2)
 {
     int choiceA;
     cin >> choiceA;
 
+    cout << player1->get_nom() << " : " << player1->get_pv() << "HP" << endl;
+    cout << player2->get_nom() << " : " << player2->get_pv() << "HP" << endl;
+
     while (true)
     {
+        player1->m_pv -= 10;
         if (choiceA == 1)
         {
-            player1.Protection1();
+            player1->Protection1();
             break;
         }
         if (choiceA == 2)
         {
-            player1.Protection2();
+            player1->Protection2();
             break;
         }
         if (choiceA == 3)
         {
-            player1.Protection3();
+            player1->Protection3();
             break;
         }
     }
@@ -42,34 +48,36 @@ void NewRound(Personnage player1, Personnage player2)
 
     while (true)
     {
+        player2->Attaque1(player1);
         if (choiceB == 1)
         {
-            if (player1.protection == 1)
+            if (player1->protection == 1)
             {
                 cout << "Le joueur s'est protégé de cette attaque ! \n";
                 break;
             }
-            player2.Attaque1(player2);
+            player2->Attaque1(player1);
+            cout << "Ben";
             break;
         }
         if (choiceB == 2)
         {
-            if (player1.protection == 2)
+            if (player1->protection == 2)
             {
                 cout << "Le joueur s'est protégé de cette attaque ! \n";
                 break;
             }
-            player2.Attaque2(player2);
+            player2->Attaque2(player1);
             break;
         }
         if (choiceB == 3)
         {
-            if (player1.protection == 3)
+            if (player1->protection == 3)
             {
                 cout << "Le joueur s'est protégé de cette attaque ! \n";
                 break;
             }
-            player2.Attaque3(player2);
+            player2->Attaque3(player2);
             break;
         }
     }
@@ -85,16 +93,16 @@ void PrintVilainList()
     cout << "1. Kyllian Mbaccle \n 2. unboug \n 3.unboug";
 }
 
-bool CheckIfDead(Personnage character)
+bool CheckIfDead(Personnage* character)
 {
-    if (character.get_pv() > 0)
+    if (character->get_pv() > 0)
     {
         return true;
     }
     return false;
 }
 
-bool EndGame(Personnage player1, Personnage player2)
+bool EndGame(Personnage* player1, Personnage* player2)
 {
     if (CheckIfDead(player1))
     {
@@ -133,6 +141,34 @@ int Personnage::get_stamina()
 
 void Personnage::Protection1()
 {
+    protection = 1;
+}
+
+void Personnage::Protection2()
+{
+    protection = 2;
+}
+
+void Personnage::Protection3()
+{
+    protection = 3;
+}
+
+void Personnage::Attaque1(Personnage* cible)
+{
+    cible->setstats(cible->get_pv()-30, cible->get_nom(), cible->get_def(), cible->get_def());
+    cout << "Palbo";
+}
+
+void Personnage::Attaque2(Personnage* cible)
+{
+    cible->setstats(cible->get_pv() - 40, cible->get_nom(), cible->get_def(), cible->get_def());
+    cout << "Palbo";
+}
+void Personnage::Attaque3(Personnage* cible)
+{
+    cible->setstats(cible->get_pv() - 40, cible->get_nom(), cible->get_def(), cible->get_def());
+    cout << "Palbo";
 }
 
 void Personnage::setstats(int hp, string nom, int def, int stamina)
@@ -149,6 +185,24 @@ Personnage::Personnage(string nom, int pv, int stamina, int def) : m_nom(nom), m
 {
 }
 
-KyllianMbaccle::KyllianMbaccle() : Personnage("KyllianMbaccle", 150, 50, 50)
+KyllianMbaccle::KyllianMbaccle() : Personnage("KyllianMbaccle", 190, 50, 50)
 {
+}
+
+void KyllianMbaccle::Attaque1(Personnage* cible)
+{
+    cible->setstats(cible->get_pv() - 40, cible->get_nom(), cible->get_def(), cible->get_def());
+    cout << "Palbo";
+}
+
+void KyllianMbaccle::Attaque2(Personnage* cible)
+{
+    cible->setstats(cible->get_pv() - 40, cible->get_nom(), cible->get_def(), cible->get_def());
+    cout << "Palbo";
+}
+
+void KyllianMbaccle::Attaque3(Personnage* cible)
+{
+    cible->setstats(cible->get_pv() - 40, cible->get_nom(), cible->get_def(), cible->get_def());
+    cout << "Palbo";
 }
