@@ -40,7 +40,12 @@ void NewRound(Personnage player1, Personnage player2)
 
 void PrintHeroList()
 {
-    cout << "1. Kyllian Mbaccle \n 2. Ben \n 3. Ben \n"
+    cout << "1. Monkey D Luffy \n 2. Ben \n 3. Ben \n"
+}
+
+void PrintVilainList()
+{
+    cout << "1. Kyllian Mbaccle \n 2. unboug \n 3.unboug"
 }
 
 bool CheckIfDead(Personnage character)
@@ -56,7 +61,7 @@ bool EndGame(Personnage player1, Personnage player2)
 {
     if (CheckIfDead(player1))
     {
-        cout << "Le joueur 2 a gagné ! \n";
+        cout << "Le joueur 2 a gagné ! \n"
         return true;
     }
     if (CheckIfDead(player2))
