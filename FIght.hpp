@@ -7,14 +7,17 @@ using namespace std;
 class Personnage
 {
 private:
-	
+	int m_pv;
 	int m_stamina;
 	int m_def;
 	string m_nom;
 
 public:
-	int m_pv;
-	Personnage(string nom, int pv, int stamina, int def);
+
+	string nom_attaque1;
+	string nom_attaque2;
+	string nom_attaque3;
+	Personnage(string nom, int pv, int stamina, int def, string att1, string att2, string att3);
 	//~Personnage();
 
 	int protection;
@@ -25,6 +28,8 @@ public:
 	virtual void Protection1();
 	virtual void Protection2();
 	virtual void Protection3();
+
+	virtual void printAttacklist();
 
 	virtual void setstats(int pv, string nom, int def, int stamina);
 	int get_pv();
@@ -45,26 +50,60 @@ public:
 	void Attaque2(Personnage* cible);
 	void Attaque3(Personnage* cible);
 
-	/* string attaque1_nom = "Moi on me parle pas d'age";
-	int attaque1_degats = 30;
 
-	string attaque2_nom = "Le Football il a changé";
-	int attaque2_degats = 40;
 
-	string attaque3_nom = "10 avec le joueur de Gibraltar";
-	int attaque3_degats = 50; */
 };
 
-class Luffy : public Personnage
+class Emiliano_Martiguez : public Personnage
 {
 public:
-//	Luffy();
-	//~Luffy();
+	Emiliano_Martiguez();
+	//~Emiliano_martiguez();
+
+	void Attaque1(Personnage* cible);
+	void Attaque2(Personnage* cible);
+	void Attaque3(Personnage* cible);
+
+};
+
+class TBM : public Personnage
+{
+public:
+	TBM();
+	//~TBM();
+
+	void Attaque1(Personnage* cible);
+	void Attaque2(Personnage* cible);
+	void Attaque3(Personnage* cible);
+
+
+};
+
+class Po : public Personnage
+{
+public:
+	Po();
+	//~Po();
+
+	void Attaque1(Personnage* cible);
+	void Attaque2(Personnage* cible);
+	void Attaque3(Personnage* cible);
+
+	string nom_attaque1 = "guerier dragon";
+
+	string nom_attaque2 = "skadoosh";
+
+	string nom_attaque3 = "cours de (PO)O";
+
 };
 
 bool EndGame(Personnage* player1, Personnage* player2);
-Personnage StartGame();
-void NewRound(Personnage* player1, Personnage* player2);
+Personnage* StartGamePlayer1();
+Personnage* StartGamePlayer2();
+void PrintHeroList();
+void PrintVilainList();
+void NewRoundPlayer1(Personnage* player1, Personnage* player2);
+void NewRoundPlayer2(Personnage* player1, Personnage* player2);
 bool CheckIfDead(Personnage* character);
 
 #endif
